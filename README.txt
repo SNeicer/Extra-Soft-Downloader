@@ -22,4 +22,4 @@ Discord: SNeicer#6396
 G-Mail: snacertyu@gmail.com
 
 Or report in Issues tab in github
-Github link: 
+Github link: https://github.com/SNeicer/Extra-Soft-Downloader
