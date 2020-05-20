@@ -20,3 +20,6 @@ Send your report on this contacts:
 
 Discord: SNeicer#6396
 G-Mail: snacertyu@gmail.com
+
+Or report in Issues tab in github
+Github link: 
