@@ -3,7 +3,7 @@
 
 
 ==SYSTEM REQUIREMENTS==
-Os: Windows 7/8/8.1/10 or Linux, Mac not tested yet.
+Os: Windows 7/8/8.1/10
 Ram: 5mb
 
 ==How to use==
