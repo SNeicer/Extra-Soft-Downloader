@@ -1,5 +1,4 @@
 ==== Extra Soft Downloader by SNeicer ====
-== Build for public testing 143 (20.05.2020), ver 1.0 ==
 
 
 ==SYSTEM REQUIREMENTS==
