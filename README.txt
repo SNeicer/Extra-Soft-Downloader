@@ -1,4 +1,5 @@
 ==== Extra Soft Downloader by SNeicer ====
+== ver 1.1 ==
 
 
 ==SYSTEM REQUIREMENTS==
