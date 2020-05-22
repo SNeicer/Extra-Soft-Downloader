@@ -28,6 +28,11 @@ GpuZUrl = 'https://dl7.softportal.org/b0/5/3/46e611ad793c149e241b77927924974f/GP
 GoogleUrl = 'https://dl.google.com/tag/s/appguid%3D%7B8A69D345-D564-463C-AFF1-A69D9E530F96%7D%26iid%3D%7B01D5ECF0-1C5D-00ED-59C7-6DC9A9C1C228%7D%26lang%3Dru%26browser%3D4%26usagestats%3D0%26appname%3DGoogle%2520Chrome%26needsadmin%3Dprefers%26ap%3Dx64-stable-statsdef_1%26installdataindex%3Dempty/update2/installers/ChromeSetup.exe'
 MozilaUrl = 'https://dl7.softportal.org/b3/0/1/a4bf201c9db4b00fbbbeb7ca93fc1dbd/Firefox_Setup_76.0.1_x64.exe'
 
+#Antiviruses
+AvastUrl = 'https://install.avcdn.net/iavs9x/avast_free_antivirus_setup_online.exe'
+Dr_webUrl = 'https://dl7.softportal.org/b6/9/0/beffd4064b7b347ada88381d1c02c092/drweb-12.0-av-win.exe'
+EsetUrl = 'https://dl7.softportal.org/b3/6/9/8a4b618f5a55b996977b3af2c7af81c1/essf_trial_rus.exe'
+
 #Other
 SDIUrl = 'http://sdi-tool.org/releases/SDI_R2000.zip'
 
@@ -74,18 +79,25 @@ def CreatingDirs():
     except FileExistsError:
         print("Directorys for other already exists")
 
+    try:
+        os.makedirs('Installed soft/Antiviruses')
+        print("Directorys for antiviruses created ")
+    except FileExistsError:
+        print("Directorys for antiviruses already exists")
+
 
 
 def MainMenu():
     cls()
     print("====Extra Soft Downloader====")
-    print("==Version 1.0 by SNeicer (Testers build 143)==")
+    print("==Version 1.1 by SNeicer==")
     print("1. Debug soft")
     print("2. Cleaning and optimization soft")
     print("3. Needed soft")
     print("4. Hardware debug soft")
     print("5. Browsers")
-    print("6. Other")
+    print("6. Antiviruses")
+    print("7. Other")
 
     UsrAnswMM = input("Enter number of needed category: ")
     if UsrAnswMM == '1':
@@ -99,6 +111,8 @@ def MainMenu():
     elif UsrAnswMM == '5':
         Browsers()
     elif UsrAnswMM == '6':
+        Antiviruses()
+    elif UsrAnswMM == '7':
         Other()
     else:
         print("Unknown number")
@@ -386,6 +400,58 @@ def Browsers():
     else:
         print('Unknown number')
         Browsers()
+
+def Antiviruses():
+    cls()
+    print("====Other====")
+    print("1. Avast")
+    print("2. Dr.Web")
+    print("3. Eset Smart Security")
+    print("0. Back to main menu")
+
+    UsrAnswAnt = input("Enter number of needed programm: ")
+
+    if UsrAnswAnt == '1':
+
+        print("Downloading Avast...")
+
+        try:
+            os.mkdir('Installed soft/Antiviruses/Avast')
+            print("Directory for Avast created")
+        except FileExistsError:
+            print("Directory for Avast already exists")
+
+        wg.download(AvastUrl, 'Installed soft/Antiviruses/Avast/')
+        Antiviruses()
+
+    elif UsrAnswAnt == '2':
+
+        print("Downloading Dr.web...")
+
+        try:
+            os.mkdir('Installed soft/Antiviruses/Dr.web')
+            print("Directory for Dr.web created")
+        except FileExistsError:
+            print("Directory for Dr.web already exists")
+
+        wg.download(Dr_webUrl, 'Installed soft/Antiviruses/Dr.web/')
+        Antiviruses()
+
+    elif UsrAnswAnt == '3':
+
+        print("Downloading Eset Smart Security...")
+
+        try:
+            os.mkdir('Installed soft/Antiviruses/Eset Smart Security')
+            print("Directory for Eset Smart Security created")
+        except FileExistsError:
+            print("Directory for Eset Smart Security already exists")
+
+        wg.download(EsetUrl, 'Installed soft/Antiviruses/Eset Smart Security/')
+        Antiviruses()
+
+    elif UsrAnswAnt == '0':
+        MainMenu()
 
 def Other():
     cls()
