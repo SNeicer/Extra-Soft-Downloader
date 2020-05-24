@@ -33,6 +33,11 @@ AvastUrl = 'https://install.avcdn.net/iavs9x/avast_free_antivirus_setup_online.e
 Dr_webUrl = 'https://dl7.softportal.org/b6/9/0/beffd4064b7b347ada88381d1c02c092/drweb-12.0-av-win.exe'
 EsetUrl = 'https://dl7.softportal.org/b3/6/9/8a4b618f5a55b996977b3af2c7af81c1/essf_trial_rus.exe'
 
+#Messengers
+TelegramUrl = 'https://dl7.softportal.org/b9/0/5/78f20025dd86b7a911ff4be89b6b171b/tportable.2.1.6.zip'
+DiscordUrl = 'https://dl7.softportal.org/b5/3/8/7030c94d4b91538ed0ed7414ba7a8cba/DiscordSetup.exe'
+TeamSpeackUrl = 'https://files.teamspeak-services.com/releases/client/3.5.3/TeamSpeak3-Client-win64-3.5.3.exe'
+
 #Other
 SDIUrl = 'http://sdi-tool.org/releases/SDI_R2000.zip'
 
@@ -85,19 +90,26 @@ def CreatingDirs():
     except FileExistsError:
         print("Directorys for antiviruses already exists")
 
+    try:
+        os.makedirs('Installed soft/Messengers')
+        print("Directorys for messengers created ")
+    except FileExistsError:
+        print("Directorys for messengers already exists")
+
 
 
 def MainMenu():
     cls()
     print("====Extra Soft Downloader====")
-    print("==Version 1.1 by SNeicer==")
+    print("==Version 1.2 by SNeicer==")
     print("1. Debug soft")
     print("2. Cleaning and optimization soft")
     print("3. Needed soft")
     print("4. Hardware debug soft")
     print("5. Browsers")
     print("6. Antiviruses")
-    print("7. Other")
+    print("7. Messengers")
+    print("8. Other")
 
     UsrAnswMM = input("Enter number of needed category: ")
     if UsrAnswMM == '1':
@@ -113,6 +125,8 @@ def MainMenu():
     elif UsrAnswMM == '6':
         Antiviruses()
     elif UsrAnswMM == '7':
+        Messengers()
+    elif UsrAnswMM == '8':
         Other()
     else:
         print("Unknown number")
@@ -403,7 +417,7 @@ def Browsers():
 
 def Antiviruses():
     cls()
-    print("====Other====")
+    print("====Antiviruses====")
     print("1. Avast")
     print("2. Dr.Web")
     print("3. Eset Smart Security")
@@ -452,6 +466,67 @@ def Antiviruses():
 
     elif UsrAnswAnt == '0':
         MainMenu()
+
+    else:
+        print('Unknown number')
+        Antiviruses()
+
+def Messengers():
+    cls()
+    print("====Messengers====")
+    print("1. Telegram")
+    print("2. Discord")
+    print("3. Team speak")
+    print("0. Back to main menu")
+
+    UsrAnswMSS = input("Enter number of needed programm: ")
+
+    if UsrAnswMSS == '1':
+
+        print("Downloading Telegram...")
+
+        try:
+            os.mkdir('Installed soft/Messengers/Telegram')
+            print("Directory for Telegram created")
+        except FileExistsError:
+            print("Directory for Telegram already exists")
+
+        wg.download(TelegramUrl, 'Installed soft/Messengers/Telegram/')
+        Messengers()
+
+    elif UsrAnswMSS == '2':
+
+        print("Downloading Discord...")
+
+        try:
+            os.mkdir('Installed soft/Messengers/Discord')
+            print("Directory for Discord created")
+        except FileExistsError:
+            print("Directory for Discord already exists")
+
+        wg.download(DiscordUrl, 'Installed soft/Messengers/Discord/')
+        Messengers()
+
+    elif UsrAnswMSS == '3':
+
+        print("Downloading Team speak...")
+
+        try:
+            os.mkdir('Installed soft/Messengers/Team speak')
+            print("Directory for Team speak created")
+        except FileExistsError:
+            print("Directory for Team speak already exists")
+
+        wg.download(TeamSpeackUrl, 'Installed soft/Messengers/Team speak/')
+        Messengers()
+
+    elif UsrAnswMSS == '0':
+        MainMenu()
+
+    else:
+        print('Unknown number')
+        Messengers()
+
 
 def Other():
     cls()
