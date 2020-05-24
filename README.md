@@ -8,6 +8,7 @@ Quick and simple CMD downloader for Windows
 * Hardware debug soft
 * Browsers
 * Antiviruses -=NEW=-
+* Messengers -=NEW=-
 * Other
 
 # System requirements
